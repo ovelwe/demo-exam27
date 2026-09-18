@@ -1,0 +1,51 @@
+{
+  "info": {
+    "name": "DemoExam 2027 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health - 200",
+      "request": { "method": "GET", "url": "http://localhost:8080/api/health" },
+      "event": [{
+        "listen": "test",
+        "script": { "exec": [
+          "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+          "pm.test('status=ok', function () { pm.expect(pm.response.json().status).to.eql('ok'); });"
+        ]}
+      }]
+    },
+    {
+      "name": "Customers - 200",
+      "request": { "method": "GET", "url": "http://localhost:8080/api/customers" },
+      "event": [{
+        "listen": "test",
+        "script": { "exec": [
+          "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+          "pm.test('Array returned', function () { pm.expect(pm.response.json()).to.be.an('array'); });"
+        ]}
+      }]
+    },
+    {
+      "name": "Order cost - 200",
+      "request": { "method": "GET", "url": "http://localhost:8080/api/order-cost?orderId=1" },
+      "event": [{
+        "listen": "test",
+        "script": { "exec": [
+          "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+          "pm.test('Total exists', function () { pm.expect(pm.response.json()).to.have.property('totalCost'); });"
+        ]}
+      }]
+    },
+    {
+      "name": "Unknown order - 404",
+      "request": { "method": "GET", "url": "http://localhost:8080/api/order-cost?orderId=999999" },
+      "event": [{
+        "listen": "test",
+        "script": { "exec": [
+          "pm.test('Status 404', function () { pm.response.to.have.status(404); });"
+        ]}
+      }]
+    }
+  ]
+}

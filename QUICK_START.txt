@@ -1,0 +1,22 @@
+БЫСТРЫЙ ЗАПУСК
+
+1. Открыть SQL Server Management Studio.
+2. Выполнить по порядку:
+   Database\01_CreateDatabase.sql
+   Database\02_SeedDemoData.sql
+   Database\03_CostViewsAndQuery.sql
+   Database\05_ImportCustomers_Fallback.sql
+   Database\04_Checks.sql
+
+3. Открыть DemoExam.sln в Visual Studio.
+4. Проверить сервер в App.config. По умолчанию: .\SQLEXPRESS
+5. Нажать F5.
+6. Для обычного импорта JSON использовать: Заказчики -> Импорт JSON.
+7. Для API: вкладка API -> Запустить API.
+8. Для тестов импортировать Tests\DemoExam.postman_collection.json в Postman.
+
+ER-диаграмма:
+Docs\er-diag.png
+
+Полное объяснение:
+README.md
