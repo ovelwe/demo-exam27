@@ -69,7 +69,7 @@ Data Source=SERVER01;...
 ## 5. Как запустить WinForms
 
 1. Открыть `DemoExam.sln` в Visual Studio.
-2. Убедиться, что установлен .NET Framework 4.8 Developer Pack.
+2. Убедиться, что установлен .NET Framework 8.
 3. Проверить `App.config`.
 4. Нажать `F5`.
 
